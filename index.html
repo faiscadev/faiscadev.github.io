@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faisca — Open Source Developer Tools</title>
+  <meta name="description" content="Faisca builds open source developer tools. A small, independent team focused on infrastructure that gets out of your way.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1/dist/fonts/geist-sans/style.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1/dist/fonts/geist-mono/style.min.css">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0a0a0a;
+      --bg-card: #141414;
+      --bg-card-hover: #1a1a1a;
+      --text: #fafafa;
+      --text-muted: #a1a1a1;
+      --text-dim: #737373;
+      --border: #262626;
+      --faisca-400: #ff9b50;
+      --faisca-500: #f07900;
+      --faisca-600: #d46000;
+      --font-sans: 'Geist Sans', 'Geist', ui-sans-serif, system-ui, sans-serif;
+      --font-mono: 'Geist Mono', ui-monospace, monospace;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: var(--faisca-400);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    a:hover {
+      color: var(--faisca-500);
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      width: 100%;
+    }
+
+    /* --- Hero --- */
+    .hero {
+      padding: 6rem 0 4rem;
+      text-align: center;
+    }
+
+    .hero-logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* --- Portfolio --- */
+    .portfolio {
+      padding: 3rem 0;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .project-card {
+      display: block;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      background: var(--bg-card);
+      transition: background 0.15s, border-color 0.15s;
+      color: var(--text);
+    }
+
+    .project-card:hover {
+      background: var(--bg-card-hover);
+      border-color: #333;
+      color: var(--text);
+    }
+
+    .project-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 0.375rem;
+    }
+
+    .project-name {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+
+    .project-tag {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      color: var(--text-dim);
+      background: #1e1e1e;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+    }
+
+    .project-desc {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+    }
+
+    /* --- About --- */
+    .about {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .about p {
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+      max-width: 560px;
+    }
+
+    .about p + p {
+      margin-top: 0.75rem;
+    }
+
+    /* --- Footer --- */
+    footer {
+      margin-top: auto;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.875rem;
+    }
+
+    .footer-links a {
+      color: var(--text-dim);
+    }
+
+    .footer-links a:hover {
+      color: var(--text-muted);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 480px) {
+      .hero {
+        padding: 4rem 0 3rem;
+      }
+
+      .hero-logo {
+        width: 160px;
+      }
+
+      .hero-tagline {
+        font-size: 1rem;
+      }
+
+      .project-header {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <svg class="hero-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 384" aria-label="faísca.">
+          <g fill="#fafafa" fill-opacity="1"><g transform="translate(40.195317, 227.680777)"><g><path d="M 12.515625 -38 L 2.890625 -38 L 2.890625 -45.703125 L 12.515625 -45.703125 L 12.515625 -56.28125 L 24.53125 -67.359375 L 42.8125 -67.359375 L 42.8125 -59.65625 L 28.390625 -59.65625 L 21.171875 -52.921875 L 21.171875 -45.703125 L 35.59375 -45.703125 L 35.59375 -38 L 21.171875 -38 L 21.171875 0 L 12.515625 0 Z"/></g></g></g><g fill="#fafafa" fill-opacity="1"><g transform="translate(78.203214, 227.680777)"><g><path d="M 4.328125 -9.140625 L 4.328125 -19.71875 L 14.4375 -28.859375 L 41.375 -28.859375 L 41.375 -35.125 L 35.59375 -40.40625 L 10.578125 -40.40625 L 10.578125 -48.109375 L 39.453125 -48.109375 L 50.03125 -38.484375 L 50.03125 0 L 44.265625 0 L 43.296875 -5.765625 L 37.046875 0 L 14.4375 0 Z M 35.125 -7.703125 L 41.375 -13.46875 L 41.375 -21.171875 L 18.28125 -21.171875 L 12.984375 -16.359375 L 12.984375 -12.515625 L 18.28125 -7.703125 Z"/></g></g></g><g fill="#fafafa" fill-opacity="1"><g transform="translate(135.455677, 227.680777)"><g><path d="M 7.703125 -48.109375 L 16.359375 -48.109375 L 16.359375 0 L 7.703125 0 Z M 16.359375 -72.171875 L 26.453125 -72.171875 L 15.390625 -54.84375 L 9.625 -54.84375 Z"/></g></g></g><g fill="#fafafa" fill-opacity="1"><g transform="translate(159.511339, 227.680777)"><g><path d="M 5.765625 -7.703125 L 36.078125 -7.703125 L 41.375 -12.515625 L 41.375 -15.875 L 36.078125 -20.6875 L 15.390625 -20.6875 L 5.296875 -29.828125 L 5.296875 -38.484375 L 15.875 -48.109375 L 47.140625 -48.109375 L 47.140625 -40.40625 L 19.71875 -40.40625 L 13.953125 -35.125 L 13.953125 -33.203125 L 19.25 -28.390625 L 39.9375 -28.390625 L 50.03125 -19.25 L 50.03125 -9.140625 L 39.9375 0 L 5.765625 0 Z"/></g></g></g><g fill="#fafafa" fill-opacity="1"><g transform="translate(213.877123, 227.680777)"><g><path d="M 6.25 -11.0625 L 6.25 -37.046875 L 18.28125 -48.109375 L 48.109375 -48.109375 L 48.109375 -40.40625 L 22.125 -40.40625 L 14.90625 -33.671875 L 14.90625 -14.4375 L 22.125 -7.703125 L 48.109375 -7.703125 L 48.109375 0 L 18.28125 0 Z"/></g></g></g><g fill="#fafafa" fill-opacity="1"><g transform="translate(264.875093, 227.680777)"><g><path d="M 4.328125 -9.140625 L 4.328125 -19.71875 L 14.4375 -28.859375 L 41.375 -28.859375 L 41.375 -35.125 L 35.59375 -40.40625 L 10.578125 -40.40625 L 10.578125 -48.109375 L 39.453125 -48.109375 L 50.03125 -38.484375 L 50.03125 0 L 44.265625 0 L 43.296875 -5.765625 L 37.046875 0 L 14.4375 0 Z M 35.125 -7.703125 L 41.375 -13.46875 L 41.375 -21.171875 L 18.28125 -21.171875 L 12.984375 -16.359375 L 12.984375 -12.515625 L 18.28125 -7.703125 Z"/></g></g></g><g fill="#ff5722" fill-opacity="1"><g transform="translate(322.136704, 227.680777)"><g><path d="M 5.765625 -10.578125 L 15.875 -10.578125 L 15.875 0 L 5.765625 0 Z"/></g></g></g>
+        </svg>
+        <p class="hero-tagline">For those who build their own fire.</p>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio">
+      <div class="container">
+        <p class="section-label">Open Source</p>
+        <div class="project-list">
+          <a class="project-card" href="https://github.com/faiscadev/presa" target="_blank" rel="noopener">
+            <div class="project-header">
+              <span class="project-name">Presa</span>
+              <span class="project-tag">API</span>
+            </div>
+            <p class="project-desc">HTML-to-PDF generation API. One endpoint, production-ready documents.</p>
+          </a>
+          <a class="project-card" href="https://github.com/faiscadev/fila" target="_blank" rel="noopener">
+            <div class="project-header">
+              <span class="project-name">Fila</span>
+              <span class="project-tag">Library</span>
+            </div>
+            <p class="project-desc">Queue library for Node.js. Simple, typed, backed by PostgreSQL.</p>
+          </a>
+          <a class="project-card" href="https://github.com/faiscadev/zopp" target="_blank" rel="noopener">
+            <div class="project-header">
+              <span class="project-name">Zopp</span>
+              <span class="project-tag">CLI</span>
+            </div>
+            <p class="project-desc">Developer tool. Coming soon.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+      <div class="container">
+        <p class="section-label">About</p>
+        <p>Small, independent team building open source developer tools. We make infrastructure that gets out of your way — things you reach for when you need them and forget about when you don't.</p>
+        <p>Everything we build ships with an open core. If it solves a problem, it should be available to anyone who has that problem.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <nav class="footer-links">
+        <a href="https://presa.dev" target="_blank" rel="noopener">presa.dev</a>
+        <a href="https://github.com/faiscadev" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
