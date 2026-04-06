@@ -234,6 +234,11 @@
       line-height: 1.5;
     }
 
+    .project-links {
+      display: flex;
+      gap: 1.25rem;
+    }
+
     .project-link {
       display: inline-flex;
       align-items: center;
@@ -244,7 +249,7 @@
       transition: gap 0.2s ease, color 0.15s;
     }
 
-    .project-card:hover .project-link {
+    .project-link:hover {
       gap: 0.5rem;
       color: var(--faisca-400);
     }
@@ -347,27 +352,36 @@
       <div class="container">
         <p class="section-label">Open Source</p>
         <div class="project-grid">
-          <a class="project-card" href="https://github.com/faiscadev/fila" target="_blank" rel="noopener">
+          <div class="project-card">
             <div class="project-top">
               <span class="project-name">Fila</span>
             </div>
             <p class="project-desc">Message broker with fair scheduling and per-key throttling as first-class primitives.</p>
-            <span class="project-link">View on GitHub <span class="project-link-arrow">&rarr;</span></span>
-          </a>
-          <a class="project-card" href="https://github.com/faiscadev/fakecloud" target="_blank" rel="noopener">
+            <div class="project-links">
+              <a class="project-link" href="https://faisca.dev/fila" target="_blank" rel="noopener">Website <span class="project-link-arrow">&rarr;</span></a>
+              <a class="project-link" href="https://github.com/faiscadev/fila" target="_blank" rel="noopener">GitHub <span class="project-link-arrow">&rarr;</span></a>
+            </div>
+          </div>
+          <div class="project-card">
             <div class="project-top">
               <span class="project-name">FakeCloud</span>
             </div>
             <p class="project-desc">Local AWS cloud emulator. Drop-in replacement for development and testing. Free forever.</p>
-            <span class="project-link">View on GitHub <span class="project-link-arrow">&rarr;</span></span>
-          </a>
-          <a class="project-card" href="https://github.com/faiscadev/zopp" target="_blank" rel="noopener">
+            <div class="project-links">
+              <a class="project-link" href="https://fakecloud.dev" target="_blank" rel="noopener">Website <span class="project-link-arrow">&rarr;</span></a>
+              <a class="project-link" href="https://github.com/faiscadev/fakecloud" target="_blank" rel="noopener">GitHub <span class="project-link-arrow">&rarr;</span></a>
+            </div>
+          </div>
+          <div class="project-card">
             <div class="project-top">
               <span class="project-name">Zopp</span>
             </div>
             <p class="project-desc">Self-hostable, local-first secrets manager. Inject into processes, export to .env.</p>
-            <span class="project-link">View on GitHub <span class="project-link-arrow">&rarr;</span></span>
-          </a>
+            <div class="project-links">
+              <a class="project-link" href="https://faisca.dev/zopp" target="_blank" rel="noopener">Website <span class="project-link-arrow">&rarr;</span></a>
+              <a class="project-link" href="https://github.com/faiscadev/zopp" target="_blank" rel="noopener">GitHub <span class="project-link-arrow">&rarr;</span></a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
