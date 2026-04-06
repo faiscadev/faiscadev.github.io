@@ -38,8 +38,6 @@
       --text-dim: #737373;
       --border: #e5e5e5;
       --border-hover: #d4d4d4;
-      --tag-bg: #f0f0f0;
-      --tag-text: #525252;
       --faisca-400: #ff9b50;
       --faisca-500: #f07900;
       --faisca-600: #d46000;
@@ -61,8 +59,6 @@
       --text-dim: #737373;
       --border: #1e1e1e;
       --border-hover: #2a2a2a;
-      --tag-bg: #1e1e1e;
-      --tag-text: #a1a1a1;
       --link: var(--faisca-400);
       --link-hover: var(--faisca-500);
       --card-shadow: 0 1px 3px rgba(0,0,0,0.2);
@@ -232,17 +228,7 @@
       letter-spacing: -0.01em;
     }
 
-    .project-tag {
-      font-family: var(--font-mono);
-      font-size: 0.6875rem;
-      color: var(--tag-text);
-      background: var(--tag-bg);
-      padding: 0.1875rem 0.625rem;
-      border-radius: 9999px;
-      letter-spacing: 0.02em;
-    }
-
-    .project-desc {
+.project-desc {
       font-size: 0.9375rem;
       color: var(--text-muted);
       line-height: 1.5;
@@ -361,7 +347,6 @@
           <a class="project-card" href="https://github.com/faiscadev/fila" target="_blank" rel="noopener">
             <div class="project-top">
               <span class="project-name">Fila</span>
-              <span class="project-tag">Broker</span>
             </div>
             <p class="project-desc">Message broker with fair scheduling and per-key throttling as first-class primitives.</p>
             <span class="project-link">View on GitHub <span class="project-link-arrow">&rarr;</span></span>
@@ -369,7 +354,6 @@
           <a class="project-card" href="https://github.com/faiscadev/fakecloud" target="_blank" rel="noopener">
             <div class="project-top">
               <span class="project-name">FakeCloud</span>
-              <span class="project-tag">Emulator</span>
             </div>
             <p class="project-desc">Local AWS cloud emulator. Drop-in replacement for development and testing. Free forever.</p>
             <span class="project-link">View on GitHub <span class="project-link-arrow">&rarr;</span></span>
@@ -377,7 +361,6 @@
           <a class="project-card" href="https://github.com/faiscadev/zopp" target="_blank" rel="noopener">
             <div class="project-top">
               <span class="project-name">Zopp</span>
-              <span class="project-tag">CLI</span>
             </div>
             <p class="project-desc">Self-hostable, local-first secrets manager. Inject into processes, export to .env.</p>
             <span class="project-link">View on GitHub <span class="project-link-arrow">&rarr;</span></span>
