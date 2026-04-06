@@ -281,11 +281,16 @@
       border-top: 1px solid var(--border);
     }
 
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     .footer-quote {
       font-size: 0.875rem;
       font-style: italic;
       color: var(--text-dim);
-      margin-bottom: 1rem;
     }
 
     .footer-links {
@@ -380,10 +385,12 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p class="footer-quote">All manner of arts men from Prometheus learned. — Aeschylus</p>
-      <nav class="footer-links">
-        <a href="https://github.com/faiscadev" target="_blank" rel="noopener">GitHub</a>
-      </nav>
+      <div class="footer-row">
+        <nav class="footer-links">
+          <a href="https://github.com/faiscadev" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+        <p class="footer-quote">All manner of arts men from Prometheus learned. — Aeschylus</p>
+      </div>
     </div>
   </footer>
 
